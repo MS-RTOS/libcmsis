@@ -39,10 +39,10 @@ src/NN/Examples/ARM/arm_nn_examples/cifar10/arm_nnexamples_cifar10.cpp
 # Header file search path (eg. LOCAL_INC_PATH := -I"Your header files search path")
 #*********************************************************************************************************
 LOCAL_INC_PATH := \
--I"./src/Core/Include" \
--I"./src/DSP/Include" \
--I"./src/DSP/PrivateInclude" \
--I"./src/NN/Include"
+-I"$(MSRTOS_BASE_PATH)/libcmsis/src/Core/Include" \
+-I"$(MSRTOS_BASE_PATH)/libcmsis/src/DSP/Include" \
+-I"$(MSRTOS_BASE_PATH)/libcmsis/src/DSP/PrivateInclude" \
+-I"$(MSRTOS_BASE_PATH)/libcmsis/src/NN/Include"
 
 #*********************************************************************************************************
 # Pre-defined macro (eg. -DYOUR_MARCO=1)
@@ -59,7 +59,7 @@ LOCAL_CXXFLAGS :=
 # Depend library (eg. LOCAL_DEPEND_LIB := -la LOCAL_DEPEND_LIB_PATH := -L"Your library search path")
 #*********************************************************************************************************
 LOCAL_DEPEND_LIB      := -larmnn -larmdsp
-LOCAL_DEPEND_LIB_PATH := -L"$(OUTDIR)"
+LOCAL_DEPEND_LIB_PATH := -L"$(MSRTOS_BASE_PATH)/libcmsis/$(OUTDIR)"
 
 #*********************************************************************************************************
 # C++ config
